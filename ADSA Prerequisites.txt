@@ -1,0 +1,20 @@
+Prerequisites:  
+•	PowerShell 5.0+ 
+•	Active Directory Management Tools 
+•	Group Policy Management Console 
+ 
+The prerequisites are typically fulfilled by a Domain Controller, but could also be on an admin tools server. Customers can execute it from their workstation where admin tools are most likely installed, but it is not recommended. 
+ 
+
+Running the scripts: 
+•	Extract the scripts to C:\ADSA on a DC admin tools server or one of the DCs. The scripts should be in the root of this folder, not a sub-folder. 
+ 
+Instructions to provide to the customer to run ADSA:
+•	Launch PowerShell as an Administrator (make sure the user executing the scripts has Enterprise Admin rights. 
+•	Get-ExecutionPolicy 
+•	Take note on what the current executionpolicy is. It will most likely be RemoteSigned. Ask the customer to set it back after the scripts have executed. 
+•	Set the executionpolicy temporarily to unrestricted: Set-ExecutionPolicy Unrestricted 
+•	Run the PowerShell scripts: 
+•	./Start-ADSADataCollection.ps1
+•	Once these scripts have completed, request the customer zip the output files and provide them to you (recommended via Bitlocker/USB, but e-mail/password protected is acceptable).
+
